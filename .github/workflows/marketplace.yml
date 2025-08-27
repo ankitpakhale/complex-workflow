@@ -7,6 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Hello
+      env:
+        OWNER_NAME: "Ankit"
+      run: echo "Hello $OWNER_NAME, have a great time"
+
     - name: Check out the code
       uses: actions/checkout@v2
 

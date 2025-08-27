@@ -20,7 +20,7 @@ jobs:
         if [ -z "$CONTACT_NAME" ]; then
           echo "⚠️ No contact details available :("
         elif [ "$CONTACT_NAME" = "true" ]; then
-          echo "Hello user, if this workflow is throwing any error then please contact $DEFAULT_CONTACT_DETAILS"
+          echo "(GitHub Secret CONTACT_NAME matched) Hello user, if this workflow is throwing any error then please contact $DEFAULT_CONTACT_DETAILS"
         else
           echo "ℹ️ Contact information is configured (value hidden for security)."
         fi

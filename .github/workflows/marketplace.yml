@@ -15,7 +15,12 @@ jobs:
     - name: Secret env
       env:
         CONTACT_NAME: ${{ secrets.CONTACT_NAME }}
-      run: echo "Hello user, if this workflow is throwing any error then please contact $CONTACT_NAME"
+      run: |
+        if [ -z "$CONTACT_NAME" ]; then
+          echo "No contact details available :("
+        else:
+          echo "Hello user, if this workflow is throwing any error then please contact $CONTACT_NAME"
+        fi
 
     - name: Check out the code
       uses: actions/checkout@v2

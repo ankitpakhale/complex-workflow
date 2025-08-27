@@ -14,7 +14,7 @@ jobs:
 
     - name: Secret env
       env:
-        CONTACT_NAME: ${{secrets.CONTACT_NAME}}
+        CONTACT_NAME: ${{ secrets.CONTACT_NAME }}
       run: echo "Hello user, if this workflow is throwing any error then please contact $CONTACT_NAME"
 
     - name: Check out the code

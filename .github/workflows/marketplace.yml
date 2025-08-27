@@ -15,11 +15,14 @@ jobs:
     - name: Secret env
       env:
         CONTACT_NAME: ${{ secrets.CONTACT_NAME }}
+        DEFAULT_CONTACT_DETAILS: "https://ankitpakhale.netlify.app/"
       run: |
         if [ -z "$CONTACT_NAME" ]; then
-          echo "No contact details available :("
+          echo "⚠️ No contact details available :("
+        elif [ "$CONTACT_NAME" = "true" ]; then
+          echo "Hello user, if this workflow is throwing any error then please contact $DEFAULT_CONTACT_DETAILS"
         else
-          echo "Hello user, if this workflow is throwing any error then please contact $CONTACT_NAME"
+          echo "ℹ️ Contact information is configured (value hidden for security)."
         fi
 
     - name: Check out the code
